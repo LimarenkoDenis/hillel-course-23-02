@@ -1,0 +1,21 @@
+{{ date | date: 'short' }}
+{{ date | date: 'MM YYYY DD' }}
+
+
+<input type="text" placeholder="search" (input)="search($event)">
+<button (click)="sortByPrice()"> ^ - </button>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <app-products
+      [products]="products"
+      [isLoading]="isLoading"
+      [searchText]="searchText"
+      [sortByPriceAbc]="sortByPriceAbc">
+    </app-products>
+    </div>
+    <div class="col md-4">
+      <app-cart [cart]="cart"></app-cart>
+    </div>
+  </div>
+</div>

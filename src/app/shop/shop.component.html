@@ -1,0 +1,19 @@
+<div *appAcl="access">
+  access key
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <app-products [products]=products (addToCart)="addToCart($event)"></app-products>
+    </div>
+    <div class="col-md-4">
+      <app-cart [cart]="cart"></app-cart>
+    </div>
+  </div>
+</div>
+
+
+<div [ngClass]="{focused:c.active}" class="form-group">
+  <label class="form-label">Amount</label>
+  <input appLable #c="lable" class="form-input" type="number" />
+</div>

@@ -1,29 +1,12 @@
-{{ date | date: 'short' }}
-{{ date | date: 'MM YYYY DD' }}
 
 
-
-
-selectedStar : {{ selectedStar }}
-<div>Reset</div>
-<div *ngFor="let star of stars" (click)="sortBYStars(star.value)">
-  {{ star.displayName }}
-</div>
-
-<input type="text" placeholder="search" (input)="search($event)">
-<button (click)="sortByPrice()"> ^ - </button>
 <div class="container">
   <div class="row">
     <div class="col-md-8">
-      <app-products
-      [products]="products$ | async"
-      [isLoading]="isLoading$ | async"
-      [searchText]="searchText"
-      [sortByPriceAbc]="sortByPriceAbc">
-    </app-products>
+      <app-products></app-products>
     </div>
     <div class="col md-4">
-      <app-cart [cart]="cart"></app-cart>
+      <app-cart></app-cart>
     </div>
   </div>
 </div>

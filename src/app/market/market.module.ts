@@ -1,3 +1,4 @@
+import { CartService } from './services/cart.service';
 import { HighlightDirective } from './directives/hightlith.directive';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     HttpClientModule
   ],
-  exports: [MarketComponent]
+  exports: [MarketComponent],
+  providers: [{ provide: 'ICartService', useValue: 1234 }, CartService]
 })
 export class MarketModule { }

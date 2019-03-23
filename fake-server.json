@@ -74,7 +74,7 @@
     },
     {
       "id": 9,
-      "title": "Coffee 'Late' small",
+      "title": "Coffee 'Late' small updated!",
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quae culpa porro ducimus!",
       "photo": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.CoffeeLatteSmall.png",
       "price": 45,
@@ -89,6 +89,59 @@
       "type": "drink",
       "id": 10,
       "amount": 1
+    },
+    {
+      "title": "new super innovatation Big Mac",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quae culpa porro ducimus!",
+      "photo": "https://mcdonalds.com.au/sites/mcdonalds.com.au/files/Product-Details-BigMac-mobile-201805.jpg",
+      "price": 100,
+      "type": "sandwich",
+      "amount": 10,
+      "id": 12
+    },
+    {
+      "title": "Coffee 'Late' small new create vy service!",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quae culpa porro ducimus!",
+      "photo": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.CoffeeLatteSmall.png",
+      "price": 45,
+      "type": "drink",
+      "amount": 1,
+      "id": 13
+    },
+    {
+      "title": "Coffee 'Late' small new create by service!",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quae culpa porro ducimus!",
+      "photo": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.CoffeeLatteSmall.png",
+      "price": 45,
+      "type": "drink",
+      "amount": 1,
+      "id": 14
+    },
+    {
+      "title": "Coffee 'Late' small new create by service!!!! 100",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam quae culpa porro ducimus!",
+      "photo": "https://www.mcdonalds.ua/content/dam/Ukraine/Item_Images/hero.CoffeeLatteSmall.png",
+      "price": 45,
+      "type": "drink",
+      "amount": 1,
+      "id": 15
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "Good cola",
+      "productId": 0
+    },
+    {
+      "id": 2,
+      "body": "Good cola 2",
+      "productId": 0
+    },
+    {
+      "id": 3,
+      "body": "Big Mac is super good",
+      "productId": 2
     }
   ]
 }

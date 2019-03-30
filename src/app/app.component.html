@@ -3,5 +3,26 @@
 
 <!-- <app-shop></app-shop> -->
 
-<app-market></app-market>
-<app-list></app-list>
+<!-- <app-market></app-market>
+<app-list></app-list> -->
+
+
+
+<app-header></app-header>
+
+
+<button [routerLink]="['users']" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Users</button>
+
+<button [routerLink]="['contacts']" routerLinkActive="active-link"
+  [routerLinkActiveOptions]="{exact: true}">Contacts</button>
+
+<button [routerLink]="['contact', cardId]" routerLinkActive="active-link"
+  [routerLinkActiveOptions]="{exact: true}">Contact detail</button>
+
+<button [routerLink]="['market']" routerLinkActive="active-link"
+  [routerLinkActiveOptions]="{exact: true}">Market</button>
+
+
+<div>
+  <router-outlet></router-outlet>
+</div>

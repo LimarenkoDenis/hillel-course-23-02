@@ -1,15 +1,17 @@
-import { CartService } from './../../market/services/cart.service';
+// import { CartService } from './../../market/services/cart.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css'],
-  providers: [CartService]
+  // providers: [CartService]
 })
 export class ListComponent implements OnInit {
 
-  constructor(private cartService: CartService) { }
+  constructor(
+    // private cartService: CartService
+    ) { }
 
   ngOnInit() {
     // setInterval(() => {

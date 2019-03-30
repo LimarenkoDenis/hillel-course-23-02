@@ -1,21 +1,23 @@
 import { CartService } from './../services/cart.service';
 import { products } from './../data';
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { IProduct } from '../interfaces/product.interface';
-import { Observable, of } from 'rxjs';
+import { Observable, of, Subscription } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { ProductsService } from '../services/products.service';
 import { PageEvent } from '@angular/material';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent implements OnInit, OnDestroy {
+  public subscription: Subscription;
   public page: PageEvent = {
     pageIndex: 1,
-    pageSize: 2,
+    pageSize: 5,
     length: 2
   };
   public isLoading$: Observable<boolean> = of(true);
@@ -24,11 +26,20 @@ export class ProductsComponent implements OnInit {
   public constructor(
     private cartSerive: CartService,
     private productService: ProductsService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
   ) {
   }
 
   public ngOnInit(): void {
-    this.getProducts(this.page);
+    this.subscription = this.activatedRoute.queryParamMap.subscribe((data: ParamMap) => {
+      this.page = {
+        ...this.page,
+        pageIndex: Number(data.get('_page')) || 1,
+        pageSize: Number(data.get('_limit')) || 2
+      };
+      this.getProducts(this.page);
+    });
 
     // this.service => http - 3 sec -> resonse
     setTimeout(() => {
@@ -41,8 +52,13 @@ export class ProductsComponent implements OnInit {
     this.products$ = this.productService.getProducts(event);
   }
 
-  public addToCart(product: IProduct): void {
+  public addToCart(product: IProduct, event: Event): void {
+    event.stopPropagation();
     this.cartSerive.addToCart(product);
+  }
+
+  public goToProductDetail(productId: string): void {
+    this.router.navigate(['market', 'product', productId]);
   }
 
 
@@ -53,8 +69,28 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  public changePage(event: PageEvent): void {
-    this.page = event;
-    this.getProducts(event);
+  public changePage({pageIndex, pageSize}: PageEvent): void {
+    this.page = {
+      ...this.page,
+      pageIndex,
+      pageSize
+    };
+
+
+
+    this.router.navigate(
+      [],
+      {
+        relativeTo: this.activatedRoute,
+        queryParams: {
+          _page: pageIndex,
+          _limit: pageSize
+        },
+        queryParamsHandling: 'merge', // remove to replace all query params by provided
+      });
+  }
+
+  public ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

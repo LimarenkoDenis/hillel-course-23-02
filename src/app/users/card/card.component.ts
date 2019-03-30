@@ -5,16 +5,16 @@ import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.css']
 })
-export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
+export class CardComponent implements OnInit, OnDestroy {
 
   constructor() { }
 
   ngOnInit() {
-    console.log('ngOnInit card');
+    // console.log('ngOnInit card');
 
-    const element: HTMLParagraphElement = document.querySelector('.parag');
+    // const element: HTMLParagraphElement = document.querySelector('.parag');
 
-    console.log('onInit', element.offsetHeight);
+    // console.log('onInit', element.offsetHeight);
   }
 
   ngOnDestroy() {
@@ -22,13 +22,13 @@ export class CardComponent implements OnInit, OnDestroy, AfterViewInit {
 
   }
 
-  ngAfterViewInit() {
-    const element: HTMLParagraphElement = document.querySelector('.parag');
+  // ngAfterViewInit() {
+  //   const element: HTMLParagraphElement = document.querySelector('.parag');
 
-    console.log(element.offsetHeight);
+  //   console.log(element.offsetHeight);
 
-    element.innerText = 'new text';
+  //   element.innerText = 'new text';
 
-  }
+  // }
 
 }

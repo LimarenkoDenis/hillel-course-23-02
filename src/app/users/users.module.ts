@@ -4,13 +4,17 @@ import { CommonModule } from '@angular/common';
 import { ListComponent } from './list/list.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { CardComponent } from './card/card.component';
+import { SettingsComponent } from './settings/settings.component';
+import { CommentsComponent } from './comments/comments.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [ListComponent, ContactsComponent, CardComponent],
+  declarations: [ListComponent, ContactsComponent, CardComponent, SettingsComponent, CommentsComponent],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    RouterModule,
   ],
-  exports: [ListComponent, ContactsComponent]
+  exports: [ListComponent, ContactsComponent, CardComponent, SettingsComponent, CommentsComponent]
 })
 export class UsersModule { }

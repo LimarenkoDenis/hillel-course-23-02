@@ -1,3 +1,17 @@
 <p>
-  contacts works!
+  Parent: contacts works!
+
+
+  <button [routerLink]="['/contacts']" routerLinkActive="active-link">
+    Settings
+  </button>
+
+  <button [routerLink]="['comments']" routerLinkActive="active-link">
+    comments
+  </button>
+
+
+
+  Child
+  <router-outlet></router-outlet>
 </p>

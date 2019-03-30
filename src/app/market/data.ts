@@ -89,4 +89,4 @@ export const products =  [
     "id": 10,
     "amount": 1,
   }
-]
+];

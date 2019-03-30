@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ShopModule } from './shop/shop.module';
 import { UsersModule } from './users/users.module';
 import { ListComponent } from './users/list/list.component';
@@ -10,6 +11,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { CounterComponent } from './counter/counter.component';
 import { MarketModule } from './market/market.module';
+import { RouterModule } from '@angular/router';
+import { routes } from './router.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { MarketModule } from './market/market.module';
     UsersModule,
     BrowserAnimationsModule,
     SharedModule,
-    MarketModule
+    HttpClientModule,
+    // MarketModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

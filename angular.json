@@ -147,5 +147,8 @@
       }
     }
   },
-  "defaultProject": "hillelangular"
+  "defaultProject": "hillelangular",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

@@ -40,7 +40,7 @@ export class ProductsService {
     return this.http.get<IProduct>(`${environment.api}/products/${productId}`);
   }
 
-  public addProducts(product: IProductBase): Observable<IProduct> {
+  public addProduct(product: IProductBase): Observable<IProduct> {
     return this.http.post<IProduct>('http://localhost:3000/products', product);
   }
 

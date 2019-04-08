@@ -13,6 +13,12 @@ import { CounterComponent } from './counter/counter.component';
 import { MarketModule } from './market/market.module';
 import { RouterModule } from '@angular/router';
 import { routes } from './router.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { reducers, metaReducers } from './state/reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
+import { ProductsEffects } from './state/effects/products.effects';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,12 @@ import { routes } from './router.module';
     SharedModule,
     HttpClientModule,
     // MarketModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    StoreModule.forRoot(reducers, { metaReducers }),
+    EffectsModule.forRoot([
+      ProductsEffects
+    ]),
+    !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],
   bootstrap: [AppComponent]

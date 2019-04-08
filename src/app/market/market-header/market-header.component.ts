@@ -14,7 +14,7 @@ export class MarketHeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.productInCart = this.cartService.getCart().length;
+    // this.productInCart = this.cartService.getCart().length;
   }
 
 }

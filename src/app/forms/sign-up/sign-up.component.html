@@ -1,0 +1,85 @@
+<div>
+  <!-- sign-up works!
+
+  <input type="text" [formControl]="searchText">
+
+  <div *ngIf="searchText.errors && searchText.errors.invaliddate && searchText.touched">
+    invalidDate
+  </div>
+
+
+  {{ searchText.invalid }}
+
+  <button [disabled]="searchText.invalid || searchText.pending">
+    Submit
+  </button>
+
+
+
+  <div *ngIf="searchText.errors && searchText.errors.asyncerror">
+    asyncerror
+  </div>
+
+  <input type="text" [formControl]="email">
+
+  <div *ngIf="email.errors && email.errors.email && email.touched">
+    email is invaid, pls set correct email
+  </div>
+
+  <div *ngIf="email.errors?.mycustomerror">
+    My custom error
+  </div> -->
+
+
+
+
+
+  <form [formGroup]="signUpForm" (ngSubmit)="submit()">
+    Name <input type="text" formControlName="name">
+    Email <input type="text" formControlName="email">
+    Pass <input autocomplete="off" [type]="passwordMarker ? 'text': 'password'" formControlName="password">
+
+    <span (click)="tooglePasswordInput()">Show </span>
+
+
+
+
+   <input type="text" formControlName="policy" type="checkbox">Aggree with policy
+
+
+    <select formControlName="gender">
+      <option *ngFor="let item of genderlist" [value]="item.value">{{ item.displayName }} </option>
+    </select>
+    <button [disabled]="signUpForm.invalid">Submit</button>
+  </form>
+
+
+
+
+
+  <!-- <form [formGroup]="formBd" (ngSubmit)="submit()">
+      Name <input type="text" formControlName="name">
+      Email <input type="text" formControlName="email">
+
+
+      Pass <input autocomplete="off" [type]="passwordMarker ? 'text': 'password'" formControlName="password">
+      Confirm Password <input autocomplete="off" [type]="passwordMarker ? 'text': 'password'" formControlName="confirmPassword">
+
+
+      <span *ngIf="formBd.errors && formBd.errors.mynomatch"> Pasword ara not mathed</span>
+
+
+      <div formArrayName="formBd.get('names')">
+          <div *ngFor="let item of names.controls; i as index">
+            {{ i }}
+              <input type="text"[formControlName]="i">
+          </div>
+        </div>
+
+
+      <span (click)="tooglePasswordInput()">Show </span>
+      <button [disabled]="formBd.invalid">Submit</button>
+    </form> -->
+
+
+</div>

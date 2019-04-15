@@ -26,5 +26,6 @@ export class AddProductToCart implements Action {
 
 
 
-export type CartActions = RemoverProductFromCart 
+export type CartActions =
+  RemoverProductFromCart
   | AddProductToCart;

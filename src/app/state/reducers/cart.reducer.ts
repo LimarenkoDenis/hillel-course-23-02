@@ -44,3 +44,7 @@ export function reducer(state = initialState, action: CartActions): ICart[] {
       return state;
   }
 }
+
+// function removeProductFromCart(state, action.payload) {
+//   return ...
+// }

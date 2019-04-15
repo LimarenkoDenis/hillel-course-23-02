@@ -14,6 +14,9 @@ export const routes: Routes = [
     path: 'users', component: ListComponent
   },
   {
+    path: 'forms', loadChildren: './forms/forms.module#MyFormsModule'
+  },
+  {
     path: 'contact/:cardID', component: CardComponent
   },
   {
